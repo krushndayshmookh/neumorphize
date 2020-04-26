@@ -1,0 +1,25 @@
+{
+  "name": "neumorphize",
+  "version": "0.0.1",
+  "description": "Neumorphize, a Neumorphic Design CSS Framework Design Library Based on Materialize.",
+  "main": "dist/js/neumorphize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krushndayshmookh/neumorphize.git"
+  },
+  "author": "Krushn Dayshmookh <krushndayshmookh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krushndayshmookh/neumorphize/issues"
+  },
+  "homepage": "https://github.com/krushndayshmookh/neumorphize#readme",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.0"
+  }
+}
