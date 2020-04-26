@@ -4,7 +4,7 @@ import sass from "gulp-sass";
 sass.compiler = require("node-sass");
 
 export function build_scss() {
-  return src("./sass/**/*.scss")
+  return src("./scss/**/*.scss")
     .pipe(sass.sync().on("error", sass.logError))
     .pipe(dest("./dist/css"));
 }
