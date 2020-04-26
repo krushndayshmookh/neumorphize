@@ -1,0 +1,9 @@
+@each $depth in (1 2 3 4 5) {
+  .shadow-inset-#{$depth} {
+    @include inset-shadow($depth);
+  }
+
+  .shadow-offset-#{$depth} {
+    @include offset-shadow($depth);
+  }
+}

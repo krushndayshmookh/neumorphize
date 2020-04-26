@@ -1,0 +1,48 @@
+/// Computes a top-left-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+
+@function top-left-shadow($depth) {
+  $primary-offset: nth(4 8 16 32 48, $depth) * 1px;
+  $blur: nth(8 16 32 64 96, $depth) * 1px;
+  $color: rgba(#ffffff, 0.18);
+
+  @return (-$primary-offset) (-$primary-offset) $blur $color;
+}
+
+/// Computes a bottom-right-shadow for a card effect.
+/// @param {Number} $depth - depth level
+/// @return {List}
+
+@function bottom-right-shadow($depth) {
+  $primary-offset: nth(4 8 16 32 48, $depth) * 1px;
+  $blur: nth(8 16 32 64 96, $depth) * 1px;
+  $color: rgba(#000000, 0.18);
+
+  @return $primary-offset $primary-offset $blur $color;
+}
+
+/// Gives a neumorphic depth effect.
+/// @param {Number} $depth - depth level (between 1 and 5)
+/// @requires {function} top-left-shadow
+/// @requires {function} bottom-right-shadow
+
+@mixin offset-shadow($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-right-shadow($depth), top-left-shadow($depth);
+  }
+}
+
+@mixin inset-shadow($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: inset bottom-right-shadow($depth), inset top-left-shadow($depth);
+  }
+}
