@@ -68,12 +68,14 @@
   background-color: $button-raised-background;
   text-align: center;
   letter-spacing: .5px;
-  @extend .z-depth-1;
+  // @extend .z-depth-1;
+  @extend .shadow-offset-1;
   transition: background-color .2s ease-out;
   cursor: pointer;
   &:hover {
     background-color: $button-raised-background-hover;
-    @extend .z-depth-1-half;
+    // @extend .z-depth-1-half;    
+    @extend .shadow-inset-1;
   }
 }
 
@@ -81,7 +83,8 @@
 .btn-floating {
   &:hover {
     background-color: $button-floating-background-hover;
-    @extend .z-depth-1-half;
+    // @extend .z-depth-1-half;    
+    @extend .shadow-inset-1;
   }
   &:before {
     border-radius: 0;
@@ -129,7 +132,8 @@
   padding: 0;
   background-color: $button-floating-background;
   border-radius: $button-floating-radius;
-  @extend .z-depth-1;
+  // @extend .z-depth-1;
+  @extend .shadow-offset-1;
   transition: background-color .3s;
   cursor: pointer;
   vertical-align: middle;
@@ -153,6 +157,9 @@ button.btn-floating {
   &.active {
     ul {
       visibility: visible;
+    }
+    .btn {
+      @extend .shadow-inset-1;
     }
   }
 
